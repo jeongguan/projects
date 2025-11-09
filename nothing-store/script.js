@@ -1,3 +1,33 @@
+// ===== THEME SWITCHING =====
+
+// Get theme toggle button
+const themeToggle = document.getElementById('theme-toggle');
+
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
+
+// Apply the saved theme on page load
+if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+}
+
+// Theme toggle event listener
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+
+    // Save the theme preference
+    const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', theme);
+
+    // Add a fun rotation animation
+    themeToggle.style.transform = 'rotate(360deg) scale(1.1)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'rotate(0deg) scale(1)';
+    }, 300);
+});
+
+// ===== PRICING CALCULATOR =====
+
 // Pricing data structure
 const pricingData = {
     onetime: {
