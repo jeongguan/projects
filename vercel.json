@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/nothing-store/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/nothing-store/index.html"
+    }
+  ],
+  "cleanUrls": true
+}
